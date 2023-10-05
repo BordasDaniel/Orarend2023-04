@@ -1,0 +1,164 @@
+body {
+  background: #1A237E; /* Háttérszín */
+  color: #000; /* Szövegszín */
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow: hidden;
+}
+
+/* Háttér */
+#background-wrap {
+  bottom: 0;
+  left: 0;
+  padding-top: 50px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+/* Felhő animáció */
+@keyframes animateCloud {
+  0% { margin-left: -1000px; }
+  100% { margin-left: 100%; }
+}
+
+/* Felhők 1-5 */
+.x1 {
+  animation: animateCloud 35s linear infinite ;
+  transform: scale(0.65);
+}
+
+.x2 {
+  animation: animateCloud 20s linear infinite ;
+  transform: scale(0.3);
+}
+
+.x3 {
+  animation: animateCloud 30s linear infinite ;
+  transform: scale(0.5);
+}
+
+.x4 {
+  animation: animateCloud 18s linear infinite ;
+  transform: scale(0.4);
+}
+
+/* Felhő */
+.cloud {
+  background: white;
+  background: linear-gradient(top, white 5%, #f1f1f1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='white', endColorstr='#f1f1f1',GradientType=0);
+  border-radius: 100px;
+  box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+  height: 120px;
+  position: relative;
+  width: 350px;
+}
+
+.cloud::after, .cloud::before {
+  background: white;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+.cloud::after {
+  border-radius: 100px;
+  height: 100px;
+  left: 50px;
+  top: -50px;
+  width: 100px;
+}
+
+.cloud::before {
+  border-radius: 200px;
+  height: 180px;
+  width: 180px;
+  right: 50px;
+  top: -90px;
+}
+
+/* Táblázat */
+td {
+  height: 50px;
+  text-align: center;
+  width: 150px;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+/* Stílus a táblázat celláihoz */
+table, td, th {
+  border: 3px solid #000; /* Táblázat szegély színe */
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
+}
+
+table {
+  background-color: #FFF; /* Táblázat háttérszíne */
+  opacity: 0.9; /* A táblázat háttér halványságának növelése */
+}
+
+th {
+  font-weight: bold;
+}
+
+.lunch-cell {
+  font-size: 20px;
+}
+
+td {
+  transition: background-color 0.7s;
+  opacity: 0.8; /* A cellák halványságának növelése */
+  font-size: 16px;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Táblázat cellára húzás eseménykezelő */
+td:hover .tooltip {
+  display: block;
+}
+
+/* Cellákra húzás eseménykezelő */
+td:hover {
+  opacity: 1; /* A cellák teljes láthatóságának beállítása */
+  background-color: #a5a0a085;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+table {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  color: #FFF; /* Fejléc színének beállítása fehérre */
+}
+
+span {
+  text-align: left;
+  opacity: 1;
+  z-index: 1;
+}
